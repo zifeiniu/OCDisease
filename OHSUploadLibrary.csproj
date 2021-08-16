@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9768EA13-62B3-4DD8-97CF-4AA6D25ACCD6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OHSUploadLibrary</RootNamespace>
+    <AssemblyName>OHSUploadLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\OrderContext.cs" />
+    <Compile Include="Model\RequiredAttribute.cs" />
+    <Compile Include="OHSContry\DataTableHelper.cs" />
+    <Compile Include="Model\OHSType\DETECTION_INFO.cs" />
+    <Compile Include="Model\OHSType\FOLLOWUP_INFO.cs" />
+    <Compile Include="Model\OHSType\NYZD.cs" />
+    <Compile Include="Model\OHSType\SubModel\AUDIT_INFO.cs" />
+    <Compile Include="Model\OHSType\SubModel\CHECK_RESULT.cs" />
+    <Compile Include="Model\OHSType\SubModel\COMPLETION_ATYPISM.cs" />
+    <Compile Include="Model\OHSType\SubModel\DIAGNOSE_INFO.cs" />
+    <Compile Include="Model\OHSType\APPRAISAL_INFO.cs" />
+    <Compile Include="Model\OHSType\DIAGNOSE_OCPD.cs" />
+    <Compile Include="Model\OHSType\ENTERPRISE_INFO.cs" />
+    <Compile Include="Model\EventBody.cs" />
+    <Compile Include="Model\OHSHeader.cs" />
+    <Compile Include="Model\OHSType\EXAM_CONCLUSION.cs" />
+    <Compile Include="Model\OHSType\SubModel\EXAM_ITEM_RESULT.cs" />
+    <Compile Include="Model\OHSType\HEALTH_EXAM_RECORD.cs" />
+    <Compile Include="Model\OHSType\SubModel\FOLLOWUP_RESULT.cs" />
+    <Compile Include="Model\OHSType\SUSPECTED_OCPD.cs" />
+    <Compile Include="Model\OHSType\SubModel\WORKER_INFO.cs" />
+    <Compile Include="Model\DataExchange.cs" />
+    <Compile Include="OHSContry\OHSContryHelper.cs" />
+    <Compile Include="OHSContry\OHSContryStartup.cs" />
+    <Compile Include="OHSContry\OHSGlobalInfo.cs" />
+    <Compile Include="OHSContry\ValidHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
